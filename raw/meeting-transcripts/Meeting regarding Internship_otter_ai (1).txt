@@ -1,0 +1,178 @@
+Speaker 1  0:00  
+Oh, You, hi, hello, Good morning. You. You
+
+sanjeev kumar  1:25  
+Yeah, I cannot see the whole all the invitees, but for sure, can you check like if everybody has already joined
+
+Kousalya  1:41  
+you? Yeah, people should join still, okay, yeah,
+
+sanjeev kumar  1:57  
+sorry, I had to, like drop yesterday, I had another meeting. But what? What are your thoughts on BT, things on Saturday? Are you guys flexible for one hour sessions on Saturday? Yeah, okay, because I think all the mentors here are working, so it would be like really difficult to accommodate during work weekday. So that's why we thought like, okay, let's, let's try to do the Saturday sessions.
+
+sanjeev kumar  2:37  
+Okay, so I think we can start and let's see
+
+Unknown Speaker  2:44  
+everyone has joined. Okay,
+
+sanjeev kumar  2:47  
+first of all, welcome everyone. It was nice meeting you all yesterday, and today, I will share with you. We will have one round of introduction. I know it's a The this is a long internship, and it's important to know each other and understand everyone's expectations. We started yesterday, but we could not finish everyone. Okay, yeah, nice. So, okay, so we already have AI taking the notes right? Transcription.
+
+DEEPIKA ELANGOVAN  3:20  
+Kousalya, sorry, it's, it's my note taker. It seems it looks like it's enabled by default. I will disable it.
+
+sanjeev kumar  3:29  
+Not a problem. I wanted Kousalya, if you can enable the transcription, at least for all these sessions, yeah. Let's, I do not have permission, it would be nice if you can start,
+
+Speaker 2  3:45  
+yeah, Deepika, for this meeting you can for next homework.
+
+DEEPIKA ELANGOVAN  3:48  
+Thanks a lot, Deepika, that
+
+sanjeev kumar  3:53  
+this is anything. Okay? So, so, yes, so the today's agenda would be to have one out of introduction and I will also share you, like a couple of things, how exactly this these sessions will go. And any inputs and feedback is welcome, right? So let me share my screen So
+
+sanjeev kumar  4:42  
+hi, it. Yeah, if you I hope you're able to see my screen. Yes, nice. Okay, so, so this is what I have prepared for today. I guess. Did you guys get the access to the PDF that Raj shared, and did you get time to check it out? Any questions on that before we start.
+
+sanjeev kumar  5:27  
+Okay, not a problem. We can talk about it in the session too. Okay, so this is what this is. This is for session today. Let's first start with introduction. I would love to hear about your experience, your expectation, and just a nice break, right? If one fun fact you can you can tell about yourself, right? And then we will talk about the structure of the session. This is an open discussion you, you might have already seen in the doc that Raj shared yesterday, like how we are going to structure it. There are multiple streams, so we are planning to have a specific structure where we have probably one to four weeks. It could be shorter. Also, I know there are people with varied experience level, so it might not fit everyone. So if you feel like it's, it's good enough for you two weeks of common sessions, then we can, we can have separate sessions, right? But in general, we are planning for first month to have a common sessions where the where the topics, will pick the topics, which is beneficial to all the streams, right? And then yeah, and then yeah, like, would like to get your feedback, whether it makes sense or not, whether it aligns with their expectations, right? Let's, let's start with the introduction, and then we'll come to the part two. Okay, I can actually start again. I think you already, I already introduced myself, but only the Fun fact, I did not say Right? Just as an icebreaker, I live in Stockholm, Sweden, and I have started learning scheme, and I'm trying to learn it. From past four years, I'm still not good at it. So every year I take, take the courage to go and go to Rome, Alpine, and I enjoy myself every year, but, but, yeah, I hope like next year I'll do better. So this is one fun fact about me. We had I would love to repeat again, so I will go through from left to right on my screen. So today it's Suhash, if you can start. Yeah.
+
+Suhash Raja  7:38  
+So I've been working in it for about like 10 years now, and started my career with the production support and worked on, mostly on PL schooling, school and bash shell scripting. Then I moved on to Splunk, a big data tool for analyzing locks and generating reports and work for various clients. And currently, I'm now in carriers which like have worked on data priorly and but no, but that is more of like monitoring and observability data. I'm moving on to the business part of it through Databricks and thing. And the past six months, have been reading Databricks and spark and was able to clear the associate level certification and Databricks. So the key takeaways from this internship is like how Databricks is being utilized in a production environment, and to understand the challenges data engineer might face in the production environment. So, so, so those are the things that I'm keen on.
+
+sanjeev kumar  8:58  
+Okay, and in fun fact about you, I
+
+Suhash Raja  9:06  
+know, like I like to play sports my interest. So I play in a Bandy here, which I picked up after moving to Sweden. And I play regularly here, Weekly once. And Badminton is some sport that I play, playing from in when I was in India as well. So these two sports are my interest. Nice.
+
+sanjeev kumar  9:29  
+Okay, thanks, Suhash. I also like to play badminton, so we will definitely bump into each other in probably sundeebury. Or some, some racket
+
+Suhash Raja  9:39  
+for sure. Yeah, I'm just nearby, Sunny. Very, actually.
+
+sanjeev kumar  9:44  
+Where do you live? Actually? Helen Barry, okay, Helen, very, yes, so I also Okay. I'm coming today to shishta for durandar. So just as you know, anyway. So thanks a lot. Suhash, like one question, you mentioned Databricks associate. Do you already have that certification? Are you preparing
+
+Suhash Raja  10:09  
+for that? Yeah? Like, I just cleared it in last month.
+
+sanjeev kumar  10:13  
+Oh, nice certification. Yeah, great, great, great. So then I would expect you to be at that level, right? So that's really good to have. So okay, and about your past experience, right? PL, SQL, so now you're trying to switch your tech stream, right words, fully towards big data analytics, and what is the stream that you want to major on. So like Raja yesterday mentioned, there are four streams probably that we will pick up ml e infra and analytics, right? What about that? Like?
+
+Suhash Raja  10:52  
+So since being worked in Splunk, like, have also done automations using Python and GitHub and GitHub actions for streaming, like, automating stuff, so and have background in Docker, like, creation of Docker images. So, like, I'm focusing on, like, data engineering as well as DevOps, yeah. So yeah. Like, I'm just trying to expand a little bit on with as well as, like on depth in relation to these two things. So yeah, and I also use TerraForm for infrastructure provisioning, like linking my hands on
+
+sanjeev kumar  11:36  
+TerraForm experience too. Yeah, that's really good experience. I think I should add one more point for everybody's introduction. I would also like to know your AI exposure, like, how you use it in your day to day work life, like llms, I don't know, like, chat, GPT or cloud code or whatnot, right? I would like to understand your everyone's exposure quickly, right? Yeah.
+
+Suhash Raja  12:00  
+So, like, I just use it in general way, like to to to ask doubts and enrich my knowledge, and haven't utilized it more productive way, or, like, in a automatic development perspective. Like, yeah, like, yeah, like, currently, like, I'm using it in more of like, knowledge transfer perspective.
+
+sanjeev kumar  12:30  
+Good to know. Thanks for Suhash. So let's move on to Filip. I think we introduce ourselves. But yeah, there are two topics, if you can add on your fun fact and your AI exposure in day to day work? Yeah, of course,
+
+Filip Cedermark  12:45  
+let's see Fun fact,
+
+sanjeev kumar  12:50  
+Neha, did you join yesterday? I think I'm seeing you for the first time. Yeah, I was here yesterday. There is a new person here, right?
+
+Neha Doda  12:59  
+Yeah, no, I didn't join the yesterday session because, like, I have a word with Raja because of some issues with my like, joining, I could not join yesterday not, not
+
+sanjeev kumar  13:10  
+a problem. Then, then Filip, if you don't mind, can you just start from the beginning, like the whole intro?
+
+Filip Cedermark  13:16  
+Yeah, sure. I'll see if I can be a bit brief or maybe. So Filip, my name, hello. Only 22 so I haven't had like as much time to gather experience, but I still think like data and data engineering is very interesting, and it's kind of where I want to be. So I'm very much looking forward to working with everyone here I have. I started my like it career In, like gymnasia, I guess, or high school. Did game development. Thought programming was very fun, but game development wasn't really where I wanted to be. So I took a year off, and then I started at a vocational education or like girkskula, where I studied AI and machine learning for two years, mostly focused on Python programming and the SQL databases and a bit in GCP for Cloud Platform. I also thought like AI and stuff is very interesting. But I thought at least during my period there, that data was like the more fun part to work on. So I kind of want to pivot towards that a bit more. Included in this education was a internship at postnode, which I did for 17 weeks, where it was much heavier focus on data and data engineering, developing, kind of sitting in their data warehouse, developing data products and shipping them to other like business units who needed them for their own work. So I got a bit more hands on experience working with like pi spark and data bricks and stuff, and I that's kind of where I realized that this is where I this is where I want to be. I think so after the internship and after I graduated, I started another boot camp at a consulting firm. Consult they kind of take you in for 12 weeks. They educate you in different topics. They have courses in data engineering, full stack development, the other C sharp, COBOL, even stuff like that, before they hire you as a consultant and find an assignment for you. So I performed that. I worked as a consultant for about a couple of months before, because of the job market is the way it is right now, I was, unfortunately let go along with one other person. But now I'm here, and I'm looking forward to Deepika and just gaining more knowledge in general, and some more experience working with data and production environments.
+
+sanjeev kumar  15:52  
+Okay, makes sense. Did we cover the fun fact?
+
+Filip Cedermark  15:58  
+Yes, of course. Fun fact about me, I think you'd be kind of music in general has always been very near to my heart. I played the drums for almost 10 years. I think had to stop a couple of years ago when we moved because they wouldn't fit in our new apartment. Also played in a band back then, and it is something I've been meaning to get back into, because I have been missing it for quite a while. Nice.
+
+sanjeev kumar  16:30  
+Good to know. Where do you live in? Do you live in Stockholm?
+
+Filip Cedermark  16:35  
+It's a bit it's not really that complicated. I still live at home. My parents are divorced, so my dad lives in Stockholm right now, at NMN Kumar Solomon, so pretty close to the offices. And my mom lives in Tabby right now, which is where I'm staying. Nice.
+
+sanjeev kumar  16:53  
+I live in valentuna. So yeah, cross Tabby every day. Thanks a lot, Filip. And just one last question for you, probably already covered it, exposure in your day to day work. Like, how sorry. The reason I'll explain, like, why I'm asking this, because I will. We are not going to be a wide coder in this session internship, right? We are going to, like, really go and read everything in detail, try to understand, build the base, and then that's when AI will help you. Not, like, from the beginning, you are just white, coding everything, right? Yeah, of course.
+
+Filip Cedermark  17:29  
+And I think that's great, yeah.
+
+sanjeev kumar  17:31  
+And the reason, like, why I want to understand your exposure is, like, I, would I use AI, like, on my in my day to day, every day, right? For but it helps me, because I can keep it in check, because I have the basic understanding of everything, what it what it is doing, right? So that's what we'll work on. But use AI. I would encourage every time we do right? I would encourage you to use AI as a companion, companion, to scale quickly, right? So that's why. Just tell whatever exposure you have. If you don't have exposure, no problem at all. In these sessions, we will talk about, I will talk about how you can actually leverages. What are the right ways to do it and whatnot, right? So just, just let us know, like, how much do you use it, or you have exposure or not?
+
+Filip Cedermark  18:19  
+I do have some exposure to it. Yes, I think it was kind of during my vocational education, like, 2021 2022 where it kind of started to blow up, like, really big with chat, GPT and stuff. But I even, like, when it was released, I always kind of felt like I want to, like, just like you said, I want to at least get to the point where I understand what chat GPT is generating, if I'm asking you to generate code. So I have been using it mostly to, like, troubleshoot and if it's, like, minor issues or stuff that, like I'm looking at and I've tried to solve before, like, 1015, minutes, and it's just it's not working. And at my boot camp, which I did this summer, they did also give us access to copilot. So I have used it a bit, yeah, just for kind of code completion and for, like, minor, more repetitive things. But I still also, like you said, I want to try to kind of get the deeper understanding and learning to code first, or like, at least, understanding the code that is being generated before I kind of rely on it. Yes, absolutely.
+
+sanjeev kumar  19:36  
+So that, thanks, Filip, we can then move on to cause. Sorry. Kousalya, if you like, let's, let's have your introduction also, right? Because I know you are not part of the internship as interns, but please feel free.
+
+Kousalya  19:48  
+Yeah, hi. I am Kousalya. I am recently, I've started my career in HR field, and I am working with database from past 656, months. And, yeah, I want to, like, grow my career in future side. And One fun fact about me is I also actually, like, I am kind of into music, yeah.
+
+sanjeev kumar  20:15  
+Okay, so personally, so you are also part of the internship. No, no. Okay, okay, since you mentioned Databricks and other texts, I thought like maybe part of this internship as a public mentor, just as an Yes, just as an organizer, we can move on.
+
+DEEPIKA ELANGOVAN  20:46  
+Hi, I'm Deepika. I'm currently based in Gothenburg. I come from India. I recently located to Sweden to move with my partner back in India, I worked as DevOps engineer in Accenture for an atmt project as part of infrastructure team for four years. So here, like my tech stack, include, like provisioning resources in cloud infrastructure, primarily using Azure. I have experience setting up CICD pipelines using Jenkins, Azure DevOps and GitHub actions as well. And I have some scripting experience with bash, PowerShell and Python. Also. Then I have used TerraForm as an infrastructure, as code for for the infrastructure setup. And having recently located to Sweden, I'm actively looking for opportunities to continue my career here in DevOps and cloud. So it's kind of challenging to find a job for me, so I see this internship as an opportunity to navigate Swedish job market. So the fun fact is, like, I'm currently learning Swedish through SFI and improving my Swedish proficiency. And with respect to AI like, I have experience using like at NT owned specific GPT when I was working in Accenture. So especially, I use it for to get some script help, scripting help, or for YAML generation, or to troubleshoot any infrastructure related issues and to resolve any vulnerabilities as well. And apart from that, like, I have experience using GitHub copilot, and recently, like I got to learn about how to integrate cloud a as well for Kubernetes cluster so the liquid can manage the cluster efficiently.
+
+sanjeev kumar  22:32  
+Great Deepika, so your AI part was like, amazing. This is what I do on day to day basis. I want to use AI, not only for QA, but I want to integrate it with my day to day coding experience, developing demos because I work as as a consultant with lot of customers, and I code also create demos for the customers and whatnot, and that's how I use it to to troubleshoot up, I don't know, Spark performance optimization, which used to take me, like, probably two to three hours to Identify. Now, I can do it in 15 minutes, right? And I can reason the with the AI to make sure that it is doing it correctly, right? So, so, yeah, good to know. And just one thing, since you are trying to learn Swedish, you would learn soon, but it's called SFE, yes, yeah. Thanks. Raja Deepika, that's Yeah. One more thing. So out of this four streams, which, which is a stream that you would like to focus on, or major
+
+DEEPIKA ELANGOVAN  23:33  
+I am pretty strong in DevOps and cloud, say, like I would like to step in on data engineering part as well. Sanjeev, okay,
+
+sanjeev kumar  23:44  
+okay, de part de major, okay, because
+
+DEEPIKA ELANGOVAN  23:49  
+I don't have much experience with database side. So I think this would be, this would provide me an opportunity to
+
+sanjeev kumar  23:55  
+learn DevOps. Do you also have infrastructure as code experience, or
+
+DEEPIKA ELANGOVAN  24:00  
+I have used TerraForm in my work for setting up Kubernetes and all other related resources.
+
+sanjeev kumar  24:06  
+Okay, nice, definitely, it should be easy for you.
+
+sanjeev kumar  24:16  
+Okay, nice, thanks a lot. Deepika. Next is Neha,
+
+Neha Doda  24:23  
+yeah, hi everyone. My name is Neha, and originally I'm from India. I came to Sweden last year in 2024 with my husband, and when I came here, I was seven months pregnant. So until then, I was on maternity break. I have, just, like, it's been two to four months, I have started searching for the jobs. About my experience. I have, like, more than 13 years of experience, but the relevant experience, I would say, is just four years, because six to seven years I spent in teaching. I was assistant professor in Chandigarh University, and then later I switched to business intelligence and data analytics. Initially, I worked with Microsoft Excel, and then I transitioned in Power BI in 2020 or 21 I don't remember, actually. And in September 2024 I joined ready school. And I joined their course AI and data analytics because I wanted to earn the certification for pl 300 so I prepared with them, and in January this year, 2026 I earned my pl 300 certification for Microsoft data analyst. And I was looking for opportunities in the market and and then I came across this internship. So I thought it's a great way to understand the Swedish job market and learn more about the real life projects. Fun fact about me is I am a mom of two kids, and I'm still learning to stay calm while handling like multiple tasks and uncertain situations like I didn't know about this meeting today, my kids are shouting outside, and if I talk about AI, I would say chat. GPT is like my best companion nowadays. I use it for everything I do. Maybe it sometimes helped me in cooking and for catching my knowledge.
+
+sanjeev kumar  26:55  
+Absolutely. Thanks a lot, Neha and yes, exactly like your younger one must be like, very, very right at the moment, like
+
+Neha Doda  27:06  
+he's 18 months.
+
+sanjeev kumar  27:08  
+Oh my god, okay, okay, must be tough to like, yeah, okay, it's great that you're able to manage it. And welcome to the team. We will try to be as flexible as possible, right? Because your personal life and professional board should go hand in hand. Okay, one question regarding your when you mentioned that you have business intelligence and analytics experience, you mentioned Power BI, right? So was it mostly on the visualization part, or also, like curation of data, creating creating analytics out of the raw data. Like, what kind of BI role did you play? So one is only on designing the dashboards. Another one is actually tripping the data for the dashboards.
+
+Neha Doda  27:51  
+Like, actually, I have created the KPIs as well. Yeah, yeah. Not only like creating the dashboards I like in my previous projects, it was actually from end to end solutions,
+
+sanjeev kumar  28:04  
+great, okay, because we will be nice to understand so that we can decide, like, which part of Which part do you need more exposure on, right? So always let us know which part you are not comfortable with and where we should focus on. Okay, good. And so which stream you would focus on? I have an idea, but please let
+
+Neha Doda  28:27  
+us know. I already talked about this with Raja, but, like, he suggested me to go for data analyst only. I don't know about but, but I, like during the meeting, I even showed interest in data engineering because I wanted to get the capabilities of data engineering as well alongside data analyst profile. Okay, yeah,
+
+sanjeev kumar  28:53  
+makes sense. Okay, so my feedback here, see, I might be wrong, but what I'm seeing in in in the analyst world, is AI has a big impact, right, especially dashboarding and trying to create those metrics and KPIs we have, like, for example, I have worked with multiple companies and multiple platforms. Like, for example, in Databricks, there, every company is embedding AI tool in their platform. And now, like, for example, let's take a example of Databricks Genie, right? You might not be aware of it. It's fine. It's just an AI tool. Everyone gives a fancy name to their own tools, right? And then, like, it's called AI bi, so it's like, just prompts, and then you should know, like, what you are asking, right? Questions. And then it automatically tries to create a KPI. You just need go and need to go and validate, right? So in analyst role, I really see a big impact of AI. So, so definitely the I will let you know my experience is what I have been saying, right? It will still take a couple of years for AI to really be better at the time. At this moment. It is just a good helper. It cannot sustain on its own. If you would like to see, all the Detect fields are affected by not in a wrong way, I would say in a positive way. It's really affected. We should definitely join hands with AI to actually do our work with de, also, I see the impact. But if you could join de and da, it will be great skill set for you, in my opinion. Then next, Vinod, I know you are one of the mentors. Would be nice if you could introduce
+
+Transcribed by https://otter.ai
