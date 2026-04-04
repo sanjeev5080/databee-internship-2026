@@ -14,3 +14,4 @@ Running list of concepts to cover across sessions. Topics are added as they come
 | 8 | Data Modeling — Star Schema (fact & dimension tables) | Briefly mentioned | Session 2 |
 | 9 | CI/CD for Data Engineering | Mentioned | Session 2 |
 | 10 | SCD & CDC — Slowly Changing Dimensions and Change Data Capture | Pending | — |
+| 11 | Data Quality — checks, frameworks, anomaly detection, contracts | Pending | — |
