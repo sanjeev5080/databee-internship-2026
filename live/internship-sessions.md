@@ -4,13 +4,52 @@
 
 ---
 
-## Session 3 — *(upcoming)*
+## Session 3 — April 5, 2026
 
 **Attendees:**
 
 **Agenda:**
+1. Week check-in — what did you work on? Blockers? Wins?
+2. Platform check-in — which platform did you choose? Demo/show your setup.
+3. Spark architecture presentations — interns present their architecture diagram (driver, workers, partitioning, fault tolerance)
+4. Use case Stage 1 progress — what did you build? What failed? Let's discuss.
+5. Architectural discussion — deep dive on distributed engines & file formats
 
 **Notes:**
+
+### 1. Week Check-in
+
+*(To be filled during session)*
+
+---
+
+### 2. Platform Check-in
+
+*(Which platform did each intern choose? Notes on setup experience)*
+
+---
+
+### 3. Spark Architecture Presentations
+
+*(Intern-led: each presents their diagram of how Spark works — driver, workers, partitioning, fault tolerance)*
+
+---
+
+### 4. Use Case Stage 1 Progress
+
+*(What was built, what failed, common errors discussed)*
+
+---
+
+### 5. Architectural Discussion — Distributed Engines & File Formats
+
+*(Deep dive continuing from Session 2)*
+
+---
+
+### Action Items for Next Session
+
+*(To be filled at end of session)*
 
 ---
 
