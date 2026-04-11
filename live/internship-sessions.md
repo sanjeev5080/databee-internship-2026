@@ -16,7 +16,7 @@
 3. Code sharing — Stage 1 progress; screen share what you have built so far
 4. Architectural discussion — table formats (Delta, Iceberg, Hudi) deep dive and comparison; Lakehouse vs Data Lake vs Data Warehouse
 
-   ![Data Intelligence Platform Architecture](../images/Screenshot 2026-04-11 at 09.00.27.png)
+   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
 5. Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(whenever ready)*
 
 **Part 2 — Based on midweek sync (Apr 8)**

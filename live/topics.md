@@ -19,6 +19,6 @@ Running list of concepts to cover across sessions. Topics are added as they come
 
 ### Lakehouse Architecture
 
-![Data Intelligence Platform Architecture](../images/Screenshot 2026-04-11 at 09.00.27.png)
+![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
 
 *Databricks Data Intelligence Platform — Sources → Ingest → Transform → Query/Process → Serve → Analyze, built on a unified Storage layer.*
