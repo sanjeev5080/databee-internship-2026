@@ -4,6 +4,30 @@
 
 ---
 
+## Session 5 — April 19, 2026 *(upcoming)*
+
+**Attendees:**
+
+**Agenda:**
+
+1. Week check-in — what did you work on? Blockers? Wins?
+2. Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
+3. Intern presentations — research from last week's tasks:
+   - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
+   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
+   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
+   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
+4. Architectural discussion — Lakehouse continued:
+   - Data Warehouse → Data Lake → Lakehouse evolution
+   - How Lakehouse achieves ACID compliance and scalability
+   - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
+
+**Notes:**
+
+*(To be filled after session)*
+
+---
+
 ## Session 4 — April 11, 2026
 
 **Attendees:** Sanjeev Kumar (mentor), Elliot Eriksson, Suhash Raja, Deepika Elangovan, Nikolaos Biniaris, Asindu Gayangana
