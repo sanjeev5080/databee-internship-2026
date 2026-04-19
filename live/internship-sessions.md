@@ -11,20 +11,7 @@
 **Agenda:**
 
 1. Week check-in — what did you work on? Blockers? Wins?
-2. *(Optional)* Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
-3. Intern presentations — research from last week's tasks:
-   - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
-   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
-   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
-   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
-4. Architectural discussion — Lakehouse continued:
-   - Data Warehouse → Data Lake → Lakehouse evolution
-   - How Lakehouse achieves ACID compliance and scalability
-   - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
-
-   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
-
-5. Intern Tech Platform & Specialization Map
+2. Intern Tech Platform & Specialization Map
 
    | Intern | Track | Specialization Focus | Primary Platform | Key Tools & Tech |
    |---|---|---|---|---|
@@ -37,6 +24,19 @@
    | **Elliot Eriksson** | ML | Supervised learning, Spark ML | Databricks | MLflow, Spark MLlib, TensorFlow/PyTorch (exploring), PySpark, VS Code |
 
    > **Note — Uncovered tech platforms:** The current cohort has not worked with **dbt**, **Snowflake**, or **AWS**. These are widely used in industry and worth exploring as stretch goals or future sessions.
+
+3. *(Optional)* Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
+4. Intern presentations — research from last week's tasks:
+   - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
+   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
+   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
+   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
+5. Architectural discussion — Lakehouse continued:
+   - Data Warehouse → Data Lake → Lakehouse evolution
+   - How Lakehouse achieves ACID compliance and scalability
+   - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
+
+   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
 
 **Part 2 — Based on midweek sync (Apr 15)**
 
