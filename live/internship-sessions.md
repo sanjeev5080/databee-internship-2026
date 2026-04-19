@@ -11,7 +11,7 @@
 **Agenda:**
 
 1. Week check-in — what did you work on? Blockers? Wins?
-2. Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
+2. *(Optional)* Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
 3. Intern presentations — research from last week's tasks:
    - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
    - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
@@ -21,6 +21,8 @@
    - Data Warehouse → Data Lake → Lakehouse evolution
    - How Lakehouse achieves ACID compliance and scalability
    - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
+
+   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
 
 **Part 2 — Based on midweek sync (Apr 15)**
 
