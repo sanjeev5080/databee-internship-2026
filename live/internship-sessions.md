@@ -22,6 +22,12 @@
    - How Lakehouse achieves ACID compliance and scalability
    - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
 
+**Part 2 — Based on midweek sync (Apr 15)**
+
+5. Progress spotlight — midweek sync follow-ups:
+   - **Suhash** — Quick walkthrough of Azure Access Connector setup and how Databricks authenticates to Azure Storage
+   - **Filip** — CDC progress: Faker-generated Delta table and silver layer deduplication logic (most recent row per ID)
+
 **Notes:**
 
 *(To be filled after session)*
