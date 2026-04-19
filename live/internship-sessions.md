@@ -4,9 +4,10 @@
 
 ---
 
-## Session 5 — April 19, 2026 *(upcoming)*
+## Session 5 — April 19, 2026
 
-**Attendees:**
+**Attendees:** Sanjeev Kumar (mentor), Kousalya, Filip Cedermark, Suhash Raja, Deepika Elangovan, Neha Doda, Nikolaos Biniaris, Elliot Eriksson
+**Absent:** Asindu Gayangana
 
 **Agenda:**
 
@@ -16,37 +17,148 @@
    | Intern | Track | Specialization Focus | Primary Platform | Key Tools & Tech |
    |---|---|---|---|---|
    | **Suhash Raja** | DE + DevOps | Streaming ingestion, medallion architecture, infra provisioning | Databricks + Azure | Azure ADLS, Azure Data Factory, Terraform, Docker, GitHub Actions, PySpark, PL/SQL |
-   | **Filip Cedermark** | DE | Data products, medallion architecture, CDC | DBT + Databricks + GCP (prior) | PySpark, Delta tables, Faker, HackerRank (SQL), GitHub Copilot |
+   | **Filip Cedermark** | DE + dbt | Data products, medallion architecture, CDC | Databricks + dbt | PySpark, Delta tables, Faker, dbt |
    | **Deepika Elangovan** | DE + DevOps | CI/CD pipelines, ETL/ELT, IaC integration | Databricks + Azure DevOps | Terraform, Kubernetes, Jenkins, GitHub Actions, PySpark, PowerShell |
    | **Neha Doda** | DA | BI dashboards, KPIs, SQL fundamentals | Power BI + Databricks (exploring) | Power BI (PL-300 certified), Excel, SQL, HackerRank |
    | **Asindu Gayangana** | DE | Advanced pipelines, CDC, Spark optimization | Databricks | Autoloader, Change Data Feed, PySpark, Kaggle data, Parquet, Azure Synapse (prior) |
    | **Nikolaos Biniaris** | DE | API integration, enriched retail pipelines | Databricks | PySpark, Pandas UDF, Public Holidays API, Weather API, Delta tables, Liquid Clustering |
-   | **Elliot Eriksson** | ML | Supervised learning, Spark ML | Snowflake| MLflow, Spark MLlib, TensorFlow/PyTorch (exploring), PySpark, VS Code |
+   | **Elliot Eriksson** | ML | Supervised learning, synthetic data generation | Snowflake | MLflow, Snowflake ML, TensorFlow/PyTorch (exploring), PySpark, VS Code |
 
-   > **Note — Uncovered tech platforms:** The current cohort has not worked with **dbt**, **Snowflake**, or **AWS**. These are widely used in industry and worth exploring as stretch goals or future sessions.
+   > **Note:** Filip added **dbt** as second specialisation; Elliot switched from Databricks to **Snowflake**.
 
-3. *(Optional)* Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
-4. Intern presentations — research from last week's tasks:
-   - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
-   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
-   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
-   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
-5. Architectural discussion — Lakehouse continued:
-   - Data Warehouse → Data Lake → Lakehouse evolution
-   - How Lakehouse achieves ACID compliance and scalability
-   - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
-
-   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
-
-**Part 2 — Based on midweek sync (Apr 15)**
-
-5. Progress spotlight — midweek sync follow-ups:
-   - **Suhash** — Quick walkthrough of Azure Access Connector setup and how Databricks authenticates to Azure Storage
-   - **Filip** — CDC progress: Faker-generated Delta table and silver layer deduplication logic (most recent row per ID)
+3. Deepika demo — CI/CD pipeline with GitHub Actions, Docker & Kubernetes *(carried over from Session 4)*
+4. Architectural discussion — End-to-end data platform walkthrough *(Azure reference architecture)*
+5. *(Carried over to next sessions)* Intern presentations — incrementalization, infer schema, AvailableNow trigger, UDFs; Elliot ML demo
 
 **Notes:**
 
-*(To be filled after session)*
+### 1. Week Check-in
+
+- **Suhash Raja** — Connected Databricks to Azure ADLS using Azure Access Connector (managed identity service). Configured storage container access so Databricks reads ADLS automatically via Spark. Learned that Databricks creates a default Access Connector for Unity Catalog metadata — separate from the user-created one for data access. Sanjeev confirmed this distinction. Will also try connecting Databricks Community Edition (free tier) to ADLS.
+- **Filip Cedermark** — Busy week (family matters), slightly behind. Switched to Faker for synthetic customer event data (fields: customer ID, name, email, phone, city, purchase amount, signup date). Planning to add CDC logic simulating email/city/order updates. Sanjeev asked Filip to share the Faker code with the group when ready so others can generate large-scale test data.
+- **Deepika Elangovan** — Prepared CI/CD demo (presented in item 3). Working on Silver layer: removing nulls/duplicates, renaming columns. Plans to study window functions and Parquet vs Delta next. Sanjeev reminder: Silver is not done without data quality checks — add DQ before considering it complete.
+- **Neha Doda** — Got onboarding guidance from Suhash and Filip during mid-week sync. Starting with SQL via the DA roadmap. Already holds Power BI PL-300 certification. Sanjeev directed her to the DA use case week-by-week plan in the repo.
+- **Nikolaos Biniaris** — Implemented full CDC across bronze → silver → gold independently. Bronze: MERGE UPSERT by comparing primary key counts. Silver: watermark-based incremental inserts/updates. Gold: rebuilds dimensions/facts for new data. Raised and merged a PR to the main repo. Sanjeev: great example of the Git flow others should follow.
+- **Elliot Eriksson** — Completed ML Use Case 1 in Databricks; needs to connect to GitHub and raise a PR. Watching Stanford ML lectures. Participating in a hackathon building a synthetic data model — plans to tie it into Use Case 2. Will demo if time permits.
+
+---
+
+### 2. Tech Platform Diversification
+
+Sanjeev raised that the cohort is heavily Databricks + Azure focused and that **dbt** and **Snowflake** are widely used in the market with customer demand. Asked for volunteers:
+
+- **Filip** → **dbt** (has prior internship experience with it; familiar with the concepts)
+- **Elliot** → **Snowflake** (fully switching; had not progressed far in Databricks)
+
+Others remain on Databricks and can add a second platform later. Sanjeev updated the tech platform table.
+
+---
+
+### 3. Deepika Demo — CI/CD with GitHub Actions, Docker & Kubernetes
+
+**CI/CD overview:**
+- CI/CD = Continuous Integration / Continuous Delivery (or Deployment)
+- Continuous Delivery = requires manual approval before production deploy
+- Continuous Deployment = fully automated all the way to production
+- Common practice: auto-deploy to dev/test/staging; manual gate for production
+
+**GitHub Actions:**
+- Pipeline config lives in `.github/workflows/` as YAML files
+- Triggered on push or PR merge to a configured branch
+- Steps: checkout code → set Python version → install dependencies → Docker login → Docker build → Docker push
+- Secrets (Docker Hub token, API key) stored as GitHub Secrets — never hardcoded in code
+
+**Docker:**
+- Dockerfile layers: base image → set workdir → copy requirements → `pip install` → copy source code → expose port → run command
+- Image tagging convention: `<date>.<run-number>` (e.g. `19.4.2026.6`) — human-readable vs default SHA hashes
+
+**Kubernetes:**
+- Rolling deployment: new pod is created and verified healthy before old pod is terminated → zero downtime
+- Key concepts: pod (runs containers), service (exposes app), deployment (desired state config), node (VM), control plane (cluster management)
+- Minikube used locally for demo (GitHub Actions does not support Minikube; it's a local learning tool only)
+
+**Live demo app:** FastAPI Gothenburg Weather app using OpenWeather API (temperature, humidity, wind, 5-day forecast). Showed: Docker pull from Hub, `kubectl apply -f deployment.yaml`, rolling pod update in real time.
+
+**Azure deployment path shown (not live):** Service principal + AKS cluster name + resource group configured as GitHub Secrets, then same YAML apply approach.
+
+**Q&A highlights:**
+- *Elliot:* When deploying new code, do you need to restart the running process? → *Sanjeev:* Yes, unless using blue-green deployment. *Deepika:* Kubernetes rolling deployment handles this — new pod runs before old pod is terminated.
+- *Sanjeev:* How much of this applies to MLOps? → *Deepika:* Limited MLOps experience, couldn't fully answer. Same CICD principles apply but MLOps has model-specific concerns.
+
+---
+
+### 4. Architectural Discussion — End-to-End Data Platform
+
+Sanjeev walked through a full Azure-based reference architecture of a typical customer data platform — framed as essential interview knowledge for all tracks (DE, DA, ML, DevOps).
+
+**Sources:**
+- RDBMS/DWH (SQL Server, Synapse) — JDBC connections, CDC streams
+- Sensors & IoT (wind farms, electricity meters, factory machines, Electrolux fridges) — continuous real-time streams
+- Files/Logs (JSON, XML, audit logs, cybersecurity logs) — semi-structured
+- Media/Unstructured (images, video) — fed to ML models (e.g. Northvolt predictive maintenance)
+- Business Apps — structured/aggregated; ML typically consumes at gold/feature store level
+- Multi-cloud — common in enterprise; involves egress cost, networking, private links
+
+**Ingest — Batch vs Streaming:**
+- Batch: hours/daily cadence, lower cost
+- Near real-time: seconds to minutes; Real-time: <1 second (fraud detection, card tap)
+- Interview tip: always reason about *why* streaming is needed — cost tradeoff is real; every interviewer will probe this
+- Tools: Azure Event Hub / Data Factory, Databricks Structured Streaming, Snowflake Snowpipes, AWS Kinesis
+
+**Orchestration (spans all layers):**
+- Manages job dependencies and scheduling end-to-end (ingest → transform → gold → reverse ETL)
+- Tools: Databricks Workflows, Azure Data Factory, Apache Airflow, AWS Glue ETL
+
+**Data & AI Governance:**
+- Non-negotiable for enterprise production: row/column-level security, access control, lineage
+- Databricks: Unity Catalog; Snowflake: Horizon; Azure: Purview; cross-platform: Immuta (referential catalog)
+- For ML: AI governance — model access audit, EU AI Act compliance
+- Sanjeev: *"Any platform without fine-grained access control will fail enterprise customers"*
+
+**Operational DB & Reverse ETL:**
+- Low-latency serving (<100ms): LakeBase (Databricks managed Postgres), Snowflake equivalent
+- Reverse ETL: pushing aggregated gold data back to operational DBs for fraud detection, credit checks, in-app real-time dashboards
+
+**Collaboration / Data Sharing:**
+- Delta Share (Databricks), Snowflake Marketplace — share data with third parties without copying it
+
+**DevOps across all layers:**
+- DevOps/MLOps applies everywhere — CI/CD for code changes, IaC for infrastructure, MLOps for model lifecycle
+
+**GDPR vs Data Governance:**
+- Data Governance = who has access to data at rest right now (access control, lineage)
+- GDPR = regulatory compliance (right to be forgotten, data residency) — related but distinct
+
+![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
+
+---
+
+### 5. Closing & Next Steps
+
+- **Session structure from next week:** Sessions split into specialised streams
+  - DE + DevOps: Sanjeev leads
+  - ML: separate mentor TBD (Elliot's stream)
+  - DA: TBD — Sanjeev or another mentor
+- Sanjeev to share the split session plan in the group channel before next week
+
+**Carried over to future sessions:**
+- Intern presentations: incrementalization & idempotency, infer schema vs fixed schema, AvailableNow trigger, Scalar vs Pandas UDF
+- Elliot ML Use Case 1 demo
+- Nikolaos detailed pipeline code walkthrough
+
+### Action Items
+
+| Task | Owner | Due |
+|------|-------|-----|
+| Try connecting Databricks CE to Azure ADLS | Suhash | Next session |
+| Share Faker data-generation code with group | Filip | This week |
+| Implement DQ checks in Silver layer | Deepika | Next session |
+| Delete & re-upload demo files; raise new PR with latest changes | Deepika | This week |
+| Study DA use case plan week-by-week | Neha | Ongoing |
+| Raise PR for ML Use Case 1 code | Elliot | This week |
+| Explore dbt | Filip | Ongoing |
+| Explore Snowflake | Elliot | Ongoing |
+| Share next week's split session plan with group | Sanjeev | Before next session |
 
 ---
 
