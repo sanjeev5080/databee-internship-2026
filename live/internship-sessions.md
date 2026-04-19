@@ -11,16 +11,38 @@
 **Agenda:**
 
 1. Week check-in — what did you work on? Blockers? Wins?
-2. Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
-3. Intern presentations — research from last week's tasks:
+2. Intern Tech Platform & Specialization Map
+
+   | Intern | Track | Specialization Focus | Primary Platform | Key Tools & Tech |
+   |---|---|---|---|---|
+   | **Suhash Raja** | DE + DevOps | Streaming ingestion, medallion architecture, infra provisioning | Databricks + Azure | Azure ADLS, Azure Data Factory, Terraform, Docker, GitHub Actions, PySpark, PL/SQL |
+   | **Filip Cedermark** | DE | Data products, medallion architecture, CDC | DBT + Databricks + GCP (prior) | PySpark, Delta tables, Faker, HackerRank (SQL), GitHub Copilot |
+   | **Deepika Elangovan** | DE + DevOps | CI/CD pipelines, ETL/ELT, IaC integration | Databricks + Azure DevOps | Terraform, Kubernetes, Jenkins, GitHub Actions, PySpark, PowerShell |
+   | **Neha Doda** | DA | BI dashboards, KPIs, SQL fundamentals | Power BI + Databricks (exploring) | Power BI (PL-300 certified), Excel, SQL, HackerRank |
+   | **Asindu Gayangana** | DE | Advanced pipelines, CDC, Spark optimization | Databricks | Autoloader, Change Data Feed, PySpark, Kaggle data, Parquet, Azure Synapse (prior) |
+   | **Nikolaos Biniaris** | DE | API integration, enriched retail pipelines | Databricks | PySpark, Pandas UDF, Public Holidays API, Weather API, Delta tables, Liquid Clustering |
+   | **Elliot Eriksson** | ML | Supervised learning, Spark ML | Snowflake| MLflow, Spark MLlib, TensorFlow/PyTorch (exploring), PySpark, VS Code |
+
+   > **Note — Uncovered tech platforms:** The current cohort has not worked with **dbt**, **Snowflake**, or **AWS**. These are widely used in industry and worth exploring as stretch goals or future sessions.
+
+3. *(Optional)* Deepika demo — CI/CD pipeline with GitHub Actions + Databricks *(carried over from Session 4)*
+4. Intern presentations — research from last week's tasks:
    - Incrementalization & idempotency — how to design a pipeline that only ingests new data; what is backfill and how do you handle it?
    - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
    - `AvailableNow` trigger — correct explanation *(Asindu leads)*
    - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
-4. Architectural discussion — Lakehouse continued:
+5. Architectural discussion — Lakehouse continued:
    - Data Warehouse → Data Lake → Lakehouse evolution
    - How Lakehouse achieves ACID compliance and scalability
    - What problems Delta / Iceberg / Hudi solve on top of raw Parquet
+
+   ![Data Intelligence Platform Architecture](../images/lakehouse-architecture.png)
+
+**Part 2 — Based on midweek sync (Apr 15)**
+
+5. Progress spotlight — midweek sync follow-ups:
+   - **Suhash** — Quick walkthrough of Azure Access Connector setup and how Databricks authenticates to Azure Storage
+   - **Filip** — CDC progress: Faker-generated Delta table and silver layer deduplication logic (most recent row per ID)
 
 **Notes:**
 
