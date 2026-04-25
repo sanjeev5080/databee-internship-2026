@@ -16,15 +16,15 @@
 2. Meeting schedule — agree on a fixed recurring time going forward *(raised in Apr 22 midweek sync)*
 3. Session stream split — confirm structure from Session 5 announcement:
    - DE + DevOps stream: Sanjeev leads
-   - ML stream: mentor TBD (Elliot)
-   - DA stream: mentor TBD (Neha)
+   - ML stream: mentor TBD (acting - Sanjeev)
+   - DA stream: mentor TBD (acting - Sanjeev)
 4. Neha — dbt vs Databricks focus: which to prioritise first? *(flagged in midweek sync — wants Sanjeev's guidance)*
-5. Intern presentations — carried over from Session 5:
+5. Elliot — ML Use Case 1 demo *(carried over from Session 5)*
+6. Intern presentations — carried over from Session 5:
    - Incrementalization & idempotency — pipeline design, backfill handling
    - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
    - `AvailableNow` trigger — correct explanation *(Asindu leads)*
    - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
-6. Elliot — ML Use Case 1 demo *(carried over from Session 5)*
 7. Nikolaos — detailed pipeline code walkthrough *(carried over from Session 5)*
 
 **Part 2 — Based on midweek sync (Apr 22)**
