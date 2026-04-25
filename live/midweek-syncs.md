@@ -4,6 +4,33 @@ A running log of all intern midweek check-in calls. Latest first.
 
 ---
 
+## Midweek Sync — April 22, 2026
+
+**Attendees:** Kousalya, Neha Doda, Filip Cedermark, Deepika Elangovan *(arrived after others had left)*
+**Absent:** Suhash Raja, Asindu Gayangana, Elliot Eriksson, Nikolaos Biniaris
+
+*Impromptu 12-minute call. Most interns saving updates for the Saturday session.*
+
+### Intern Progress Updates
+
+- **Filip Cedermark** — Recovering from a difficult personal week; picking up again. Has started looking into dbt more following Session 5's platform diversification discussion. Saving detailed updates for Saturday.
+- **Neha Doda** — Has a cold; working remotely from India. Installed dbt locally and read about it — noted it uses SQL for data transformations, which complements her DA/Power BI background. Also explored Databricks (free edition) as a platform. Previously looked at Microsoft Fabric but found it has no free learning tier. Wants Sanjeev's guidance on whether to focus on dbt or Databricks first, or whether she can do both simultaneously. Filip's view: Databricks is an environment, dbt is a framework — they complement each other and can be done in parallel.
+- **Deepika Elangovan** *(arrived after call ended)* — Was removed from the Slack workspace (free 14-day trial expired). Kousalya to follow up with Raj to get her re-added.
+
+### Logistics
+
+- Meeting timing to be decided at the Saturday (Apr 26) session when most members are present.
+
+### Action Items
+
+| Task | Owner | Due |
+|------|-------|-----|
+| Discuss dbt vs Databricks prioritisation with Sanjeev | Neha | Saturday session |
+| Re-add Deepika to Slack — follow up with Raj | Kousalya | ASAP |
+| Agree on fixed midweek sync timing | All | Saturday session |
+
+---
+
 ## Midweek Sync — April 15, 2026
 
 **Attendees:** Kousalya, Suhash Raja, Filip Cedermark, Neha Doda, Deepika Elangovan
