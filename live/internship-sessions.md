@@ -4,6 +4,44 @@
 
 ---
 
+## Session 6 — April 26, 2026 *(upcoming)*
+
+**Attendees:**
+
+**Agenda:**
+
+**Part 1 — Weekly sync**
+
+1. Week check-in — what did you work on? Blockers? Wins?
+2. Meeting schedule — agree on a fixed recurring time going forward *(raised in Apr 22 midweek sync)*
+3. Session stream split — confirm structure from Session 5 announcement:
+   - DE + DevOps stream: Sanjeev leads
+   - ML stream: mentor TBD (Elliot)
+   - DA stream: mentor TBD (Neha)
+4. Neha — dbt vs Databricks focus: which to prioritise first? *(flagged in midweek sync — wants Sanjeev's guidance)*
+5. Intern presentations — carried over from Session 5:
+   - Incrementalization & idempotency — pipeline design, backfill handling
+   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
+   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
+   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
+6. Elliot — ML Use Case 1 demo *(carried over from Session 5)*
+7. Nikolaos — detailed pipeline code walkthrough *(carried over from Session 5)*
+
+**Part 2 — Based on midweek sync (Apr 22)**
+
+8. Action item check-ins from Session 5:
+   - **Suhash** — Databricks CE → Azure ADLS connection attempt
+   - **Filip** — Faker data-generation code shared with group? dbt progress?
+   - **Deepika** — DQ checks in Silver layer; new PR raised?
+   - **Elliot** — ML Use Case 1 PR raised?
+9. Admin: Deepika's Slack removal *(free trial expired — Kousalya following up with Raj)*
+
+**Notes:**
+
+*(To be filled after session)*
+
+---
+
 ## Session 5 — April 19, 2026
 
 **Attendees:** Sanjeev Kumar (mentor), Kousalya, Filip Cedermark, Suhash Raja, Deepika Elangovan, Neha Doda, Nikolaos Biniaris, Elliot Eriksson
