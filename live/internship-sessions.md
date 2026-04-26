@@ -105,7 +105,7 @@ Full pipeline: bronze → silver → dimensions → fact_sales → gold metrics 
 
 ### 5. Logistics & Closing
 
-- **Wednesday sync timing**: uncomfortable for several interns (Deepika: Swedish class; others joining late). Sanjeev: post a Slack poll to agree on a new time rather than spending session time on it.
+- **Wednesday sync timing**: uncomfortable for several interns (Deepika: Swedish class; others joining late). To be resolved async via Slack.
 - **Session stream split**: delayed due to logistics. Sanjeev handling all tracks for now; update coming via Slack.
 - **Next session CANCELLED**: Sanjeev on business trip next weekend (returns Sunday evening). Session resumes in two weeks — **May 9**.
 
