@@ -22,6 +22,8 @@
 
 6. Elliot — MLflow deep-dive: model logging, feature stores, serving endpoint
 7. Spark streaming optimization — rate limiting, `maxBytesPerTrigger`, `maxFilesPerTrigger`, partition pruning *(Asindu's `maxBytesPerPartition` issue + broader context)*
+8. Spark Definitive Guide walkthrough — group reading/discussion session
+   - Reference: [Spark: The Definitive Guide](https://analyticsdata24.wordpress.com/wp-content/uploads/2020/02/spark-the-definitive-guide40www.bigdatabugs.com_.pdf)
 
 **Notes:**
 
