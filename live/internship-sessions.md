@@ -4,7 +4,7 @@
 
 ---
 
-## Session 6 — April 26, 2026 *(upcoming)*
+## Session 7 — May 9, 2026 *(upcoming)*
 
 **Attendees:**
 
@@ -13,32 +13,113 @@
 **Part 1 — Weekly sync**
 
 1. Week check-in — what did you work on? Blockers? Wins?
-2. Meeting schedule — agree on a fixed recurring time going forward *(raised in Apr 22 midweek sync)*
-3. Session stream split — confirm structure from Session 5 announcement:
-   - DE + DevOps stream: Sanjeev leads
-   - ML stream: mentor TBD (acting - Sanjeev)
-   - DA stream: mentor TBD (acting - Sanjeev)
-4. Neha — dbt vs Databricks focus: which to prioritise first? *(flagged in midweek sync — wants Sanjeev's guidance)*
-5. Elliot — ML Use Case 1 demo *(carried over from Session 5)*
-6. Intern presentations — carried over from Session 5:
-   - Incrementalization & idempotency — pipeline design, backfill handling
-   - `infer schema` vs fixed schema — production pros and cons *(Asindu leads)*
-   - `AvailableNow` trigger — correct explanation *(Asindu leads)*
-   - Scalar UDF vs vectorized / Pandas UDF — when to use each *(Nikolaos leads)*
-7. Nikolaos — detailed pipeline code walkthrough *(carried over from Session 5)*
+2. Session stream split — confirm DE+DevOps / ML / DA structure and logistics *(carried over)*
+3. Filip — dbt silver layer demo: quarantine/dead-letter table with reason tags
+4. Deepika — CI/CD artifact separation: Bundles vs Terraform for catalog, schema & checkpoints *(pros/cons)*
+5. Nikolaos — metadata-driven DQ framework walkthrough
 
-**Part 2 — Based on midweek sync (Apr 22)**
+**Part 2 — Technical deep-dives**
 
-8. Action item check-ins from Session 5:
-   - **Suhash** — Databricks CE → Azure ADLS connection attempt
-   - **Filip** — Faker data-generation code shared with group? dbt progress?
-   - **Deepika** — DQ checks in Silver layer; new PR raised?
-   - **Elliot** — ML Use Case 1 PR raised?
-9. Admin: Deepika's Slack removal *(free trial expired — Kousalya following up with Raj)*
+6. Elliot — MLflow deep-dive: model logging, feature stores, serving endpoint
+7. Spark streaming optimization — rate limiting, `maxBytesPerTrigger`, `maxFilesPerTrigger`, partition pruning *(Asindu's `maxBytesPerPartition` issue + broader context)*
 
 **Notes:**
 
 *(To be filled after session)*
+
+---
+
+## Session 6 — April 25, 2026
+
+**Attendees:** Sanjeev Kumar (mentor), Kousalya, Filip Cedermark, Suhash Raja, Deepika Elangovan, Neha Doda, Nikolaos Biniaris, Elliot Eriksson, Asindu Gayangana
+
+---
+
+### 1. Week Check-in
+
+- **Filip Cedermark** — Screenshared Faker-based CDC generator: generates customer records (ID, name, email, phone, city, purchase amount) with configurable row count; first batch always change_type = "insert"; second function updates random rows → change_type = "update" or "delete"; includes nulls for DQ practice. Silver partly done: null email → "unknown@example.com", null phone → "not available". Next: move to dbt; implement quarantine/dead-letter table with reason tagging (Sanjeev recommendation). Will push code to GitHub.
+- **Suhash Raja** — No major update this week.
+- **Neha Doda** — Started SQL roadmap from GitHub; installed MS SQL Server 2019. Explored dbt and Databricks Academy fundamentals. Has prior Microsoft Fabric experience.
+  → **Sanjeev**: Stay on DA track; dbt is the right tool — gives analysts power to do SQL-based transformations (equivalent of what DE does in PySpark). Switching to full DE from zero would be too steep right now. Discuss with Raj if wanting to change track.
+- **Elliot Eriksson** — Demoed ML Use Case 1 (see section 2). Also working on Use Case 2. Dropped early.
+- **Deepika Elangovan** — Limited progress (volunteering this week). Ingested data into bronze (customers + orders); silver: trimming, normalization, null removal, column renaming. Plans to add advanced functions before next session.
+  → **Sanjeev task**: Research CI/CD artifact separation — what belongs in pipeline deployment (Databricks Bundles/API) vs infrastructure deployment (Terraform): specifically catalog, schema, and checkpoint artifacts. Prepare a pros/cons argument.
+- **Asindu Gayangana** — No major update (busy last two weeks).
+- **Nikolaos Biniaris** — Implemented SCDs, full DQ framework (4 checks: uniqueness, not-null, FK relationships, accepted values), quarantine table with reason column, and business metric APIs (CLV, revenue by product, holiday impact, customer segments, country performance). Detailed walkthrough in section 3.
+
+---
+
+### 2. Elliot — ML Use Case 1 Demo (Counter-Strike round winner predictor)
+
+- **Data & preprocessing**: Game state features (time left, players alive per team, etc.); binary labels (win=1/loss=0); 80/20 train/test split
+- **Model**: Gradient Boosting Classifier; ROC AUC used for scoring
+- **MLflow**: ~100 model runs via hyperparameter tuning; best model auto-selected. Accuracy improved from ~60% → ~80%
+- **Sanjeev walkthrough of Databricks ML UI**: Showed Experiments + Models panel — all runs logged per iteration with metrics (precision, etc.); model can be registered and promoted; Serving section = deploy registered model to an endpoint for inference
+- **Next steps for Elliot**: Explore MLflow in depth — model logging, feature stores, model serving. Also explore Snowflake Cortex (since now on Snowflake track).
+
+---
+
+### 3. Nikolaos — Pipeline Walkthrough & DQ Framework
+
+Full pipeline: bronze → silver → dimensions → fact_sales → gold metrics → fact_sales_enriched (+ holidays API)
+
+**DQ framework (modelled after dbt, without Great Expectations):**
+- 4 checks: uniqueness of PKs, FK relationships, not-null on key columns, accepted values
+- Single parameterized notebook — table name passed as job parameter; same notebook reused across all gold tables
+- Quarantine table: broken rows with reason column (test type, failed count, pass rate)
+
+**Sanjeev feedback:**
+- Good reusable pattern; `.toPandas().toList()` for metadata table is fine for small metadata but flag as non-scalable if applied to data
+- **Key next step — metadata-driven DQ framework**: Hardcoding column checks means every new table requires a code change → testing + deployment window + risk. Production standard: store check configs in a metadata table or JSON file → code reads config dynamically → no code change per new source onboarding
+- **at-rest vs in-flight DQ**: current implementation reads data back after writing (at-rest). In-flight DQ (applied during write) is more efficient and lower latency. Research both; plan to migrate.
+
+---
+
+### 4. Technical Discussions
+
+**infer schema vs fixed schema** (Suhash, Deepika, Asindu, Sanjeev):
+- `inferSchema=True`: Spark samples a subset to auto-detect column types — risk of wrong inference (e.g., integer inferred but data later contains longs → truncation). Has happened in production.
+- **Sanjeev's recommendation — mix and match**:
+  - Give **schema hints** for critical columns (IDs, cost, dates) — Spark fixes those, infers the rest
+  - In **bronze**: cast all columns to string (accepts everything, nothing dropped) + schema evolution enabled to capture new columns
+  - In **silver+**: apply proper typed schema
+  - Enable `mergeSchema=True` for schema evolution so new upstream columns are captured rather than silently dropped or failing the job
+- **Asindu**: In bronze, schema inference + evolution is needed so new columns aren't lost for auditing. Sanjeev agreed but: risk of wrong type inference → prefer casting everything to string in bronze instead
+
+**Scalar UDF vs Pandas (Vectorized) UDF** (Nikolaos, Suhash, Sanjeev):
+- **Scalar UDF**: row-by-row; falls outside JVM → serialization/deserialization overhead; bypasses Catalyst optimizer. In some cases replacing a UDF with a native Spark function gives dramatic performance gains — this is one of the most common Spark optimization wins seen in production.
+- **Pandas UDF**: chunk-based (processes batches of rows); stays within Spark execution model; significantly faster
+- **Best practice**: Always prefer native Spark functions. Use UDF only when unavoidable. If unavoidable, use Pandas UDF.
+- **When unavoidable**: custom ML inference per row (e.g., computer vision on IoT machine images — UDF fires model endpoint per image; switching to Pandas UDF → ~15K images processed in parallel per batch)
+- UDFs unavoidable in ~20% of production cases; 80% can be replaced with native Spark functions
+
+**AvailableNow trigger** (Asindu live demo, Sanjeev):
+- `spark.readStream` polls source every 500ms by default — runs continuously
+- `trigger(availableNow=True)`: converts streaming job to batch — reads all new files since last checkpoint, processes them in parallel, then stops. Checkpoint location handles incrementalization automatically.
+- vs `spark.read` (batch): works fine but incrementalization must be handled manually (e.g., date-based directory structure + orchestrator passing current date)
+- vs `trigger(once=True)` (deprecated): processes all data in a single batch — not parallel, inefficient for large datasets
+- **Asindu's `maxBytesPerPartition` issue**: failing because source table is not partitioned — this option requires a partitioned source. To be covered in a dedicated Spark optimization session.
+- Future sessions: dedicated deep-dive on rate limiting, `maxBytesPerTrigger`, `maxFilesPerTrigger`, partition pruning, and Spark optimization.
+
+---
+
+### 5. Logistics & Closing
+
+- **Wednesday sync timing**: uncomfortable for several interns (Deepika: Swedish class; others joining late). Sanjeev: post a Slack poll to agree on a new time rather than spending session time on it.
+- **Session stream split**: delayed due to logistics. Sanjeev handling all tracks for now; update coming via Slack.
+- **Next session CANCELLED**: Sanjeev on business trip next weekend (returns Sunday evening). Session resumes in two weeks — **May 9**.
+
+### Action Items
+
+| Task | Owner | Due |
+|------|-------|-----|
+| Push Faker CDC data generator to GitHub repo | Filip | This week |
+| Implement dbt silver layer with quarantine table and reason tags | Filip | Next session |
+| Start dbt SQL learning roadmap | Neha | Ongoing |
+| Research CI/CD artifact separation (Bundles/API vs Terraform for catalog, schema, checkpoints) — pros/cons | Deepika | Next session |
+| Research at-rest vs in-flight DQ checks; build metadata-driven DQ framework | Nikolaos | Next session |
+| Explore MLflow: model logging, feature stores, serving endpoint | Elliot | Next session |
+| Post Slack poll for Wednesday midweek sync timing | Kousalya | This week |
 
 ---
 
