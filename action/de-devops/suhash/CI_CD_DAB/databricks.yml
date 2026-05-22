@@ -6,4 +6,5 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://dbc-a6d413ca-868d.cloud.databricks.com
+      host: https://yourdatabrickinstancename.cloud.databricks.com
+# update the host with your host details
