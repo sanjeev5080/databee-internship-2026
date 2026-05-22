@@ -1,0 +1,84 @@
+name: Databricks DAB CI/CD Pipeline
+
+on:
+  #push:
+   # branches:
+   #   - main
+  #pull_request:
+   # branches:
+    #  - main
+  workflow_dispatch:   # manual trigger also enabled
+jobs:
+  validate:
+    name: Validate DAB bundle
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Databricks CLI (v2 - required for DAB)
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: Verify CLI
+        run: databricks --version
+      - name: Validate bundle
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+        run: |
+         cd my_first_job
+         databricks bundle validate
+
+  deploy:
+    name: Deploy to Databricks (DAB)
+    needs: validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Databricks CLI (v2 - required for DAB)
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: Deploy bundle
+        run: |
+         cd my_first_job
+         databricks bundle deploy
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+
+  run-job:
+    name: Run Databricks Job
+    needs: deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Databricks CLI (v2 - required for DAB)
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+      - name: Trigger job run
+        run: |
+            cd my_first_job
+            databricks bundle run sample_job
+        env:
+            DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
+            DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+          
